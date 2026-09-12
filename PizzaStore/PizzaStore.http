@@ -1,0 +1,56 @@
+@PizzaStore_HostAddress = http://localhost:5077
+
+GET {{PizzaStore_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+GET {{PizzaStore_HostAddress}}/pizza/
+Accept: application/json
+
+###
+
+GET {{PizzaStore_HostAddress}}/pizza/1
+Accept: application/json
+
+###
+
+GET {{PizzaStore_HostAddress}}/pizza/5
+Accept: application/json
+
+###
+
+POST {{PizzaStore_HostAddress}}/pizza/
+Content-Type: application/json
+
+{
+    "name": "Hawaiian",
+    "isGlutenFree": false
+}
+
+###
+
+PUT {{PizzaStore_HostAddress}}/pizza/3
+Content-Type: application/json
+
+{
+    "id": 3,
+    "name": "Hawaiian Pizza",
+    "isGlutenFree": false
+}
+
+###
+
+DELETE {{PizzaStore_HostAddress}}/pizza/3
+
+###
+
+GET {{PizzaStore_HostAddress}}/pizza/
+Accept: application/json
+
+###
+
+GET {{PizzaStore_HostAddress}}/pizza/
+Accept: application/json
+
+###
