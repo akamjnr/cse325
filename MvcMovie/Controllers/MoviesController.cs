@@ -20,8 +20,10 @@ namespace MvcMovie.Controllers
         }
 
         // GET: Movies
-        // GET: Movies
-        public async Task<IActionResult> Index(string movieGenre, string searchString)
+        public async Task<IActionResult> Index(
+            string movieGenre,
+            string searchString,
+            int? selectedYear)
         {
             if (_context.Movie == null)
             {
@@ -33,22 +35,43 @@ namespace MvcMovie.Controllers
                                             orderby m.Genre
                                             select m.Genre;
 
+            // Get the years from the movies.
+            IQueryable<int> yearQuery = from m in _context.Movie
+                                        orderby m.ReleaseDate.Year
+                                        select m.ReleaseDate.Year;
+
             var movies = from m in _context.Movie
                          select m;
 
+            // Filter by title.
             if (!string.IsNullOrEmpty(searchString))
             {
-                movies = movies.Where(s => s.Title!.ToUpper().Contains(searchString.ToUpper()));
+                movies = movies.Where(s =>
+                    s.Title!.ToUpper().Contains(searchString.ToUpper()));
             }
 
+            // Filter by genre.
             if (!string.IsNullOrEmpty(movieGenre))
             {
                 movies = movies.Where(x => x.Genre == movieGenre);
             }
 
+            // Filter by selected year or newer.
+            if (selectedYear.HasValue)
+            {
+                movies = movies.Where(x => x.ReleaseDate.Year >= selectedYear.Value);
+            }
+
             var movieGenreVM = new MovieGenreViewModel
             {
-                Genres = new SelectList(await genreQuery.Distinct().ToListAsync()),
+                Genres = new SelectList(
+                    await genreQuery.Distinct().ToListAsync()),
+
+                Years = new SelectList(
+                    await yearQuery.Distinct().ToListAsync()),
+
+                SelectedYear = selectedYear,
+
                 Movies = await movies.ToListAsync()
             };
 
@@ -65,6 +88,7 @@ namespace MvcMovie.Controllers
 
             var movie = await _context.Movie
                 .FirstOrDefaultAsync(m => m.Id == id);
+
             if (movie == null)
             {
                 return NotFound();
@@ -81,10 +105,10 @@ namespace MvcMovie.Controllers
 
         // POST: Movies/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,ReleaseDate,Genre,Price")] Movie movie)
+        public async Task<IActionResult> Create(
+            [Bind("Id,Title,ReleaseDate,Genre,Price,Rating")] Movie movie)
         {
             if (ModelState.IsValid)
             {
@@ -92,6 +116,7 @@ namespace MvcMovie.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             return View(movie);
         }
 
@@ -104,19 +129,22 @@ namespace MvcMovie.Controllers
             }
 
             var movie = await _context.Movie.FindAsync(id);
+
             if (movie == null)
             {
                 return NotFound();
             }
+
             return View(movie);
         }
 
         // POST: Movies/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,ReleaseDate,Genre,Price")] Movie movie)
+        public async Task<IActionResult> Edit(
+            int id,
+            [Bind("Id,Title,ReleaseDate,Genre,Price,Rating")] Movie movie)
         {
             if (id != movie.Id)
             {
@@ -141,8 +169,10 @@ namespace MvcMovie.Controllers
                         throw;
                     }
                 }
+
                 return RedirectToAction(nameof(Index));
             }
+
             return View(movie);
         }
 
@@ -156,6 +186,7 @@ namespace MvcMovie.Controllers
 
             var movie = await _context.Movie
                 .FirstOrDefaultAsync(m => m.Id == id);
+
             if (movie == null)
             {
                 return NotFound();
@@ -170,12 +201,14 @@ namespace MvcMovie.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var movie = await _context.Movie.FindAsync(id);
+
             if (movie != null)
             {
                 _context.Movie.Remove(movie);
             }
 
             await _context.SaveChangesAsync();
+
             return RedirectToAction(nameof(Index));
         }
 
