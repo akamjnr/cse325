@@ -1,0 +1,68 @@
+# .NET / Visual Studio
+.vs/
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# Build and temporary files
+*.log
+*.tmp
+*.pdb
+*.cache
+*.ilk
+*.obj
+*.nupkg
+*.snupkg
+
+# NuGet
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+
+# Node
+node_modules/
+
+# Environment files
+.env
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Coverage
+coverage*.json
+coverage*.xml
+coverage*.info
+
+# Publish
+publish/
+*.publish.xml
+*.pubxml
+*.publishproj
+
+# ASP.NET
+ScaffoldingReadMe.txt
