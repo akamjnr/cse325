@@ -1,0 +1,14 @@
+C:\Users\ashle\OneDrive\Documents\BYU-Pathway\2026\Term 5\CSE325 .NET Software Development\Week01\MyConsoleApp\bin\Debug\net10.0\MyConsoleApp.exe
+C:\Users\ashle\OneDrive\Documents\BYU-Pathway\2026\Term 5\CSE325 .NET Software Development\Week01\MyConsoleApp\bin\Debug\net10.0\MyConsoleApp.deps.json
+C:\Users\ashle\OneDrive\Documents\BYU-Pathway\2026\Term 5\CSE325 .NET Software Development\Week01\MyConsoleApp\bin\Debug\net10.0\MyConsoleApp.runtimeconfig.json
+C:\Users\ashle\OneDrive\Documents\BYU-Pathway\2026\Term 5\CSE325 .NET Software Development\Week01\MyConsoleApp\bin\Debug\net10.0\MyConsoleApp.dll
+C:\Users\ashle\OneDrive\Documents\BYU-Pathway\2026\Term 5\CSE325 .NET Software Development\Week01\MyConsoleApp\bin\Debug\net10.0\MyConsoleApp.pdb
+C:\Users\ashle\OneDrive\Documents\BYU-Pathway\2026\Term 5\CSE325 .NET Software Development\Week01\MyConsoleApp\obj\Debug\net10.0\MyConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ashle\OneDrive\Documents\BYU-Pathway\2026\Term 5\CSE325 .NET Software Development\Week01\MyConsoleApp\obj\Debug\net10.0\MyConsoleApp.AssemblyInfoInputs.cache
+C:\Users\ashle\OneDrive\Documents\BYU-Pathway\2026\Term 5\CSE325 .NET Software Development\Week01\MyConsoleApp\obj\Debug\net10.0\MyConsoleApp.AssemblyInfo.cs
+C:\Users\ashle\OneDrive\Documents\BYU-Pathway\2026\Term 5\CSE325 .NET Software Development\Week01\MyConsoleApp\obj\Debug\net10.0\MyConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\ashle\OneDrive\Documents\BYU-Pathway\2026\Term 5\CSE325 .NET Software Development\Week01\MyConsoleApp\obj\Debug\net10.0\MyConsoleApp.dll
+C:\Users\ashle\OneDrive\Documents\BYU-Pathway\2026\Term 5\CSE325 .NET Software Development\Week01\MyConsoleApp\obj\Debug\net10.0\refint\MyConsoleApp.dll
+C:\Users\ashle\OneDrive\Documents\BYU-Pathway\2026\Term 5\CSE325 .NET Software Development\Week01\MyConsoleApp\obj\Debug\net10.0\MyConsoleApp.pdb
+C:\Users\ashle\OneDrive\Documents\BYU-Pathway\2026\Term 5\CSE325 .NET Software Development\Week01\MyConsoleApp\obj\Debug\net10.0\MyConsoleApp.genruntimeconfig.cache
+C:\Users\ashle\OneDrive\Documents\BYU-Pathway\2026\Term 5\CSE325 .NET Software Development\Week01\MyConsoleApp\obj\Debug\net10.0\ref\MyConsoleApp.dll

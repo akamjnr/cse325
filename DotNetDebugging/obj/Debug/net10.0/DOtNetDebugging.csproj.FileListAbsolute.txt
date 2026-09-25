@@ -1,0 +1,15 @@
+C:\Users\ashle\OneDrive\Documents\BYU-Pathway\2026\Term 5\CSE325 .NET Software Development\cse325\DOtNetDebugging\bin\Debug\net10.0\DOtNetDebugging.exe
+C:\Users\ashle\OneDrive\Documents\BYU-Pathway\2026\Term 5\CSE325 .NET Software Development\cse325\DOtNetDebugging\bin\Debug\net10.0\DOtNetDebugging.deps.json
+C:\Users\ashle\OneDrive\Documents\BYU-Pathway\2026\Term 5\CSE325 .NET Software Development\cse325\DOtNetDebugging\bin\Debug\net10.0\DOtNetDebugging.runtimeconfig.json
+C:\Users\ashle\OneDrive\Documents\BYU-Pathway\2026\Term 5\CSE325 .NET Software Development\cse325\DOtNetDebugging\bin\Debug\net10.0\DOtNetDebugging.dll
+C:\Users\ashle\OneDrive\Documents\BYU-Pathway\2026\Term 5\CSE325 .NET Software Development\cse325\DOtNetDebugging\bin\Debug\net10.0\DOtNetDebugging.pdb
+C:\Users\ashle\OneDrive\Documents\BYU-Pathway\2026\Term 5\CSE325 .NET Software Development\cse325\DOtNetDebugging\obj\Debug\net10.0\DOtNetDebugging.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ashle\OneDrive\Documents\BYU-Pathway\2026\Term 5\CSE325 .NET Software Development\cse325\DOtNetDebugging\obj\Debug\net10.0\DOtNetDebugging.AssemblyInfoInputs.cache
+C:\Users\ashle\OneDrive\Documents\BYU-Pathway\2026\Term 5\CSE325 .NET Software Development\cse325\DOtNetDebugging\obj\Debug\net10.0\DOtNetDebugging.AssemblyInfo.cs
+C:\Users\ashle\OneDrive\Documents\BYU-Pathway\2026\Term 5\CSE325 .NET Software Development\cse325\DOtNetDebugging\obj\Debug\net10.0\DOtNetDebugging.csproj.CoreCompileInputs.cache
+C:\Users\ashle\OneDrive\Documents\BYU-Pathway\2026\Term 5\CSE325 .NET Software Development\cse325\DOtNetDebugging\obj\Debug\net10.0\DOtNetDebugging.sourcelink.json
+C:\Users\ashle\OneDrive\Documents\BYU-Pathway\2026\Term 5\CSE325 .NET Software Development\cse325\DOtNetDebugging\obj\Debug\net10.0\DOtNetDebugging.dll
+C:\Users\ashle\OneDrive\Documents\BYU-Pathway\2026\Term 5\CSE325 .NET Software Development\cse325\DOtNetDebugging\obj\Debug\net10.0\refint\DOtNetDebugging.dll
+C:\Users\ashle\OneDrive\Documents\BYU-Pathway\2026\Term 5\CSE325 .NET Software Development\cse325\DOtNetDebugging\obj\Debug\net10.0\DOtNetDebugging.pdb
+C:\Users\ashle\OneDrive\Documents\BYU-Pathway\2026\Term 5\CSE325 .NET Software Development\cse325\DOtNetDebugging\obj\Debug\net10.0\DOtNetDebugging.genruntimeconfig.cache
+C:\Users\ashle\OneDrive\Documents\BYU-Pathway\2026\Term 5\CSE325 .NET Software Development\cse325\DOtNetDebugging\obj\Debug\net10.0\ref\DOtNetDebugging.dll
