@@ -1,49 +1,93 @@
 @page "/checkout"
+@using Microsoft.AspNetCore.Components.Forms
+@implements IDisposable
 @inject OrderState OrderState
 @inject HttpClient HttpClient
 @inject NavigationManager NavigationManager
 
 <div class="main">
-    <div class="checkout-cols">
-        <div class="checkout-order-details">
-            <h4>Review order</h4>
 
-            @foreach (var pizza in Order.Pizzas)
-            {
+    <EditForm EditContext="editContext" OnValidSubmit="PlaceOrder">
+
+        <div class="checkout-cols">
+
+            <div class="checkout-order-details">
+                <h4>Review order</h4>
+
+                @foreach (var pizza in Order.Pizzas)
+                {
+                    <p>
+                        <strong>
+                            @pizza.Size"
+                            @pizza.Special.Name
+                            (R @pizza.GetFormattedTotalPrice())
+                        </strong>
+                    </p>
+                }
+
                 <p>
                     <strong>
-                        @(pizza.Size)"
-                        @pizza.Special.Name
-                        (R @pizza.GetFormattedTotalPrice())
+                        Total price:
+                        R @Order.GetFormattedTotalPrice()
                     </strong>
                 </p>
-            }
+            </div>
 
-            <p>
-                <strong>
-                    Total price:
-                    R @Order.GetFormattedTotalPrice()
-                </strong>
-            </p>
+            <div class="checkout-delivery-address">
+                <h4>Deliver to...</h4>
+
+                @if (isError)
+                {
+                    <div class="alert alert-danger">
+                        Please enter a name and address.
+                    </div>
+                }
+
+                <AddressEditor Address="Order.DeliveryAddress" />
+            </div>
+
         </div>
-    </div>
 
-    <button class="checkout-button btn btn-warning" @onclick="PlaceOrder" disabled="@isSubmitting">
-        Place order
-    </button>
+        <button class="checkout-button btn btn-warning" type="Submit" disabled="@isError">
+            Place order
+        </button>
+
+        <DataAnnotationsValidator />
+
+    </EditForm>
+
 </div>
 
 @code {
     Order Order => OrderState.Order;
 
-    bool isSubmitting;
+    bool isError = true;
+
+    private EditContext editContext;
+
+    protected override void OnInitialized()
+    {
+        editContext = new(Order.DeliveryAddress);
+        editContext.OnFieldChanged += HandleFieldChanged;
+    }
+
+    private void HandleFieldChanged(object sender, FieldChangedEventArgs e)
+    {
+        isError = !editContext.Validate();
+        StateHasChanged();
+    }
+
+    protected void ShowError()
+    {
+        isError = true;
+    }
 
     async Task PlaceOrder()
     {
-        isSubmitting = true;
+        isError = false;
 
         var response = await HttpClient.PostAsJsonAsync(
-            $"{NavigationManager.BaseUri}orders",
+            NavigationManager.BaseUri + "orders",
             OrderState.Order);
 
         var newOrderId = await response.Content.ReadFromJsonAsync<int>();
@@ -51,5 +95,10 @@
         OrderState.ResetOrder();
 
         NavigationManager.NavigateTo($"myorders/{newOrderId}");
+    }
+
+    public void Dispose()
+    {
+        editContext.OnFieldChanged -= HandleFieldChanged;
     }
 }
